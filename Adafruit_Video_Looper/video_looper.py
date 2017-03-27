@@ -152,7 +152,7 @@ class VideoLooper(object):
         message if the on screen display is enabled.
         """
         # Print message to console with number of movies in playlist.
-        message = 'Found {0} movie{1}.'.format(playlist.length(), 
+        message = '{0} video{1} gevonden.'.format(playlist.length(), 
             's' if playlist.length() >= 2 else '')
         self._print(message)
         # Do nothing else if the OSD is turned off.
@@ -214,7 +214,7 @@ class VideoLooper(object):
                 movie = playlist.get_next()
                 if movie is not None:
                     # Start playing the first available movie.
-                    self._print('Playing movie: {0}'.format(movie))
+                    self._print('Video afspelen: {0}'.format(movie))
                     self._player.play(movie, loop=playlist.length() == 1, vol = self._sound_vol)
             # Check for changes in the file search path (like USB drives added)
             # and rebuild the playlist.
